@@ -23,26 +23,52 @@ class GameObject {
     public var active = true;
     public var visible = true;
 
-    public function new() {}
+    public function new(?x:Float = 0, ?y:Float = 0) {
+        this.x = x;
+        this.y = y;
+    }
 
-    public function render(graphics:Graphics) {}
+    public function render(graphics:Graphics) {
+        for(r in renderers){
+            r(graphics);
+        }
+    }
 
-    public function update() {}
+    public function update() {
+        for(u in updaters) {
+            u();
+        }
+    }
+
+    public function AddChild(go:GameObject):GameObject {
+        if(children.indexOf(go) != -1) return null;
+        children.push(go);
+        go.parent = this;
+        return go;
+
+    }
+
+    public function RemoveChild(go:GameObject) {
+        children.remove(go);
+    }
+
     /**
      *  Add a Component to this GameObject
      *  @param component - Component to add to GameObject
      */
     public function AddComponent(component:Component) : Component {
-            components.push(component);
-            component.init(this);
-            return component;
-        }
+        components.push(component);
+        component.init(this);
+        return component;
+    }
 
     /**
      *  Remove a Component from this GameObject
      *  @param component - Component to remove.
      */
-    public function RemoveComponent(component:Component) {components.remove(component)}
+    public function RemoveComponent(component:Component) {
+        components.remove(component);
+    }
 
     /**
      *  Retrieve Component of type T from GameObject.
@@ -108,7 +134,7 @@ class GameObject {
             DoRender(c, graphics);
         }
     }
-    
+
     /**
      *  Recursively Update go and all of go's children
      *  @param go - GameObject to update
