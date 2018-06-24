@@ -1,0 +1,5 @@
+Sources/*
+build/*
+.vscode/*
+khafile.js
+.dev
