@@ -5,7 +5,6 @@
     "tags": ["2d", "engine"],
     "description": "A simple 2D Engine made on the Kha Framework",
     "version": "0.0.1",
-    "classPath": "src/",
     "releasenote": "Initial release, Not stable",
     "contributors": ["pMatt1988"],
     "dependencies": {

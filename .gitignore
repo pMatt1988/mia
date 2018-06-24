@@ -1,4 +1,5 @@
-Sources/*
+Sources/Main.hx
+Sources/Project.hx
 build/*
 .vscode/*
 khafile.js

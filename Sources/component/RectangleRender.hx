@@ -10,5 +10,6 @@ class RectangleRender extends Component {
     public function render(graphics:Graphics) {
         
         
+        
     }
 }
