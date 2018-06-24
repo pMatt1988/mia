@@ -10,5 +10,6 @@
     "dependencies": {
       "kha":"",
       "nape":""
-    }
+    },
+    "classPath": "Sources/"
   }

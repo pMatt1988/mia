@@ -1,15 +1,15 @@
-package component;
+package mia;
+
 
 import kha.graphics2.Graphics;
 
-class RectangleRender extends Component {
+class GameObject {
     public function new() {
         
     }
 
     public function render(graphics:Graphics) {
         
-        
-        
     }
+    
 }

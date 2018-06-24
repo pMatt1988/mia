@@ -1,4 +1,4 @@
-package component;
+package mia.component;
 
 class Component {
     var gameObject:GameObject;
